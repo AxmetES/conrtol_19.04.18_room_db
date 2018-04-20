@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\Android\erkin\appControll_lists_db\conrtol_19.04.18\app\app.iml" filepath="D:\Android\erkin\appControll_lists_db\conrtol_19.04.18\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/conrtol_19.04.18.iml" filepath="$PROJECT_DIR$/conrtol_19.04.18.iml" />
+      <module fileurl="file://D:\Android\erkin\appControll_lists_db\conrtol_19.04.18\conrtol_19.04.18.iml" filepath="D:\Android\erkin\appControll_lists_db\conrtol_19.04.18\conrtol_19.04.18.iml" />
     </modules>
   </component>
 </project>

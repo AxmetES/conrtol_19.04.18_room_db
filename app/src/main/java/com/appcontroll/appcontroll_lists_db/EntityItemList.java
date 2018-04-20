@@ -3,6 +3,7 @@ package com.appcontroll.appcontroll_lists_db;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -12,30 +13,32 @@ import java.util.UUID;
 
 @Entity
 public class EntityItemList {
-    @PrimaryKey UUID id;
+
+    private ArrayList<EntityItemList> lists;
+
+    @PrimaryKey int id;
     private String listName;
 
-    List<TodoList> todoLists;
+    public EntityItemList() {
+    }
 
-    public EntityItemList(String listName, UUID id) {
+    public EntityItemList(String listName, int id) {
         this.listName = listName;
         this.id = id;
 
     }
-
-    public UUID getId() {
+    public int getId() {
         return id;
     }
-
-    public void setId(UUID id) {
+    public void setId(int id) {
         this.id = id;
     }
-
     public String getListName() {
         return listName;
     }
-
     public void setListName(String listName) {
         this.listName = listName;
     }
+
 }
+

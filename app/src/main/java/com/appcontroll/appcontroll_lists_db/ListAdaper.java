@@ -26,7 +26,7 @@ public class ListAdaper extends RecyclerView.Adapter<ListAdaper.ViewHolder>{
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = View.inflate(context, R.layout.item,null);
+        View view = View.inflate(context, R.layout.list_ltem,null);
         return new ViewHolder(view);
     }
 
@@ -39,7 +39,7 @@ public class ListAdaper extends RecyclerView.Adapter<ListAdaper.ViewHolder>{
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, SecondActivity.class);
-                intent.putExtra("list_Name", entityItemList.getListName());
+                intent.putExtra("id", entityItemList.getId());
                 context.startActivity(intent);
             }
         });
@@ -52,7 +52,7 @@ public class ListAdaper extends RecyclerView.Adapter<ListAdaper.ViewHolder>{
 
     class ViewHolder extends RecyclerView.ViewHolder {
         TextView ma_list_tw;
-        public ViewHolder(View itemView) {
+         ViewHolder(View itemView) {
             super(itemView);
             ma_list_tw = itemView.findViewById(R.id.ma_list_tw);
         }
