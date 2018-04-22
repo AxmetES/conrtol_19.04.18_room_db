@@ -5,6 +5,9 @@ import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 
+import com.appcontroll.appcontroll_lists_db.Entitys.EntityItemList;
+import com.appcontroll.appcontroll_lists_db.Entitys.TodoList;
+
 import java.util.List;
 
 /**
@@ -13,6 +16,7 @@ import java.util.List;
 
 @Dao
 public interface EntityItemListDAO {
+
     @Insert
     void insertAll(EntityItemList entityItemList);
 

@@ -1,13 +1,14 @@
 package com.appcontroll.appcontroll_lists_db;
 
 import android.content.Context;
-import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
-import android.content.Context;
 import android.content.Intent;
 import android.widget.TextView;
+
+import com.appcontroll.appcontroll_lists_db.Activitys.SecondActivity;
+import com.appcontroll.appcontroll_lists_db.Entitys.EntityItemList;
 
 import java.util.List;
 

@@ -1,12 +1,8 @@
-package com.appcontroll.appcontroll_lists_db;
+package com.appcontroll.appcontroll_lists_db.Entitys;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
-import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.UUID;
 
 /**
  * Created by АхметжановЕ on 19.04.2018.
@@ -23,6 +19,7 @@ public class TodoList {
     String ownerId;
 
     public TodoList() {
+
     }
 
     public int getId() {

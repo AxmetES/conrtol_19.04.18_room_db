@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.appcontroll.appcontroll_lists_db.Activitys.AddToMainListActivity">
+
+    <TextView
+        android:id="@+id/add_text_title_tolist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="20dp"
+        android:text="Name of List"/>
+
+    <EditText
+        android:id="@+id/add_edit_tolist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+      app:layout_constraintTop_toBottomOf="@+id/add_text_title_tolist" />
+    <Button
+        android:id="@+id/add_tolist_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/add_edit_tolist"
+        android:text="add"/>
+    <Button
+        android:id="@+id/delete_tolist_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/add_tolist_btn"
+        app:layout_constraintTop_toBottomOf="@+id/add_edit_tolist"
+        android:text="delete"/>
+
+
+
+</android.support.constraint.ConstraintLayout>

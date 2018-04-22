@@ -1,11 +1,9 @@
-package com.appcontroll.appcontroll_lists_db;
+package com.appcontroll.appcontroll_lists_db.Entitys;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
 
 /**
  * Created by АхметжановЕ on 19.04.2018.
