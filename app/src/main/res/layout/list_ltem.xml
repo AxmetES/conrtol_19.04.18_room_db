@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:text="ma_list_tw"
         android:textSize="16dp"
-        android:textColor="@android:color/black"
+        android:padding="8dp"
         app:layout_constraintStart_toStartOf="parent"/>
 
 

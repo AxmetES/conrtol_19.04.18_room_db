@@ -1,15 +1,18 @@
 package com.appcontroll.appcontroll_lists_db.Activitys;
 
+import android.arch.persistence.room.Room;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.appcontroll.appcontroll_lists_db.EntityItemListDB;
+import com.appcontroll.appcontroll_lists_db.Entitys.EntityItemList;
 import com.appcontroll.appcontroll_lists_db.R;
 
 public class AddToMainListActivity extends AppCompatActivity implements View.OnClickListener {
-    Button addBtn, deleteBtn;
+    Button addBtn, deleteBtn, findBtn;
     EditText etListName;
 
 
@@ -21,25 +24,38 @@ public class AddToMainListActivity extends AppCompatActivity implements View.OnC
 
         addBtn = (Button)findViewById(R.id.add_tolist_btn);
         addBtn.setOnClickListener(this);
+        findBtn = (Button)findViewById(R.id.find_tolist_btn);
+        findBtn.setOnClickListener(this);
         deleteBtn = (Button)findViewById(R.id.delete_tolist_btn);
         deleteBtn.setOnClickListener(this);
 
         etListName = (EditText)findViewById(R.id.add_edit_tolist);
 
 
+
+
     }
 
     @Override
     public void onClick(View v) {
+        EntityItemListDB appDB = Room.databaseBuilder(getApplicationContext(),EntityItemListDB.class,"mainlistdatabase")
+                .allowMainThreadQueries()
+                .build();
+
         String listName  = etListName.getText().toString();
 
         switch (v.getId()){
             case R.id.add_tolist_btn:
-            //todo
+                appDB.getEntityDao().insertAll();
+
                 break;
             case R.id.delete_tolist_btn:
                 //todo
                 break;
+            case R.id.find_tolist_btn:
+                //todo
+                break;
+
         }
 
     }

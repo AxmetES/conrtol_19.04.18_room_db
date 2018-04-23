@@ -3,6 +3,7 @@ package com.appcontroll.appcontroll_lists_db;
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.RoomDatabase;
 
+import com.appcontroll.appcontroll_lists_db.DAO.EntityItemListDAO;
 import com.appcontroll.appcontroll_lists_db.Entitys.EntityItemList;
 
 /**

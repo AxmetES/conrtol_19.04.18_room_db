@@ -1,7 +1,8 @@
-package com.appcontroll.appcontroll_lists_db;
+package com.appcontroll.appcontroll_lists_db.DAO;
 
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
+import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 
@@ -17,7 +18,7 @@ import java.util.List;
 @Dao
 public interface EntityItemListDAO {
 
-    @Insert
+    @Insert(onConflict = Ignore)
     void insertAll(EntityItemList entityItemList);
 
     @Delete

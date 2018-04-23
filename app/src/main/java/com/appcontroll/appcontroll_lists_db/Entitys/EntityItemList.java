@@ -1,5 +1,6 @@
 package com.appcontroll.appcontroll_lists_db.Entitys;
 
+import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
@@ -12,9 +13,10 @@ import java.util.ArrayList;
 @Entity
 public class EntityItemList {
 
-    private ArrayList<EntityItemList> lists;
+    @PrimaryKey(autoGenerate = true)
+    private int id;
 
-    @PrimaryKey int id;
+    @ColumnInfo(name = "list_name")
     private String listName;
 
     public EntityItemList() {
