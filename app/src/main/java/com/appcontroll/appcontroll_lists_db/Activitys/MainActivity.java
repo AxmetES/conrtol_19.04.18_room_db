@@ -1,5 +1,8 @@
 package com.appcontroll.appcontroll_lists_db.Activitys;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,10 +25,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
     FloatingActionButton fab;
-
+    List<EntityItemList> entityItemLists;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,23 +39,16 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        EntityItemListDB appDB = Room.databaseBuilder(getApplicationContext(),EntityItemListDB.class,"mainlistdatabase")
-                .allowMainThreadQueries()
-                .build();
-        List<EntityItemList> entityItemLists = appDB.getEntityDao().getAllEntity();
-
-
         recyclerView = findViewById(R.id.ma_list_rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new MainListAdapter(entityItemLists);
         recyclerView.setAdapter(adapter);
 
-
         fab =  findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-             //   startActivity(new Intent(MainActivity.this, AddToMainListActivity.class));
+                startActivity(new Intent(MainActivity.this, AddToMainListActivity.class));
 
             }
         });

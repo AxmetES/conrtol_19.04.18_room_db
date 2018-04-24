@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * Created by АхметжановЕ on 19.04.2018.
  */
 
-@Entity
+@Entity(tableName = "listnametb")
 public class EntityItemList {
 
     @PrimaryKey(autoGenerate = true)

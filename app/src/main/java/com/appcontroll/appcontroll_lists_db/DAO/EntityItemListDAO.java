@@ -18,18 +18,18 @@ import java.util.List;
 @Dao
 public interface EntityItemListDAO {
 
-    @Insert(onConflict = Ignore)
+    @Insert
     void insertAll(EntityItemList entityItemList);
 
     @Delete
     void delete(EntityItemList entityItemList);
 
-    @Query("SELECT * FROM entityitemlist")
+    @Query("SELECT * FROM listnametb")
     List<EntityItemList> getAllEntity();
 
-    @Query("SELECT * FROM entityitemlist WHERE listName LIKE :listName")
+    @Query("SELECT * FROM listnametb WHERE list_name LIKE :listName")
     List<EntityItemList> getListName(String listName);
 
-    @Query("SELECT * FROM todolist WHERE ownerId IS :listName")
-    List<TodoList> getToDoListForOwner(String ownerId);
+    @Query("SELECT * FROM todolisttb WHERE ownerId IS :ownerId")
+    List<TodoList> getToDoListForOwnerId(String ownerId);           //ERROR??
 }

@@ -9,7 +9,8 @@ import android.arch.persistence.room.PrimaryKey;
  * Created by АхметжановЕ on 19.04.2018.
  */
 
-@Entity(foreignKeys = @ForeignKey(
+@Entity(tableName = "todolisttb",
+        foreignKeys = @ForeignKey(
         entity = EntityItemList.class,
         parentColumns = "id",
         childColumns = "ownerId"

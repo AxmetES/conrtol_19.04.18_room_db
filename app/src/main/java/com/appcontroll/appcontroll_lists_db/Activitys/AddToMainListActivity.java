@@ -11,9 +11,12 @@ import com.appcontroll.appcontroll_lists_db.EntityItemListDB;
 import com.appcontroll.appcontroll_lists_db.Entitys.EntityItemList;
 import com.appcontroll.appcontroll_lists_db.R;
 
-public class AddToMainListActivity extends AppCompatActivity implements View.OnClickListener {
+public class AddToMainListActivity extends AppCompatActivity{
     Button addBtn, deleteBtn, findBtn;
     EditText etListName;
+    EntityItemListDB appDB = Room.databaseBuilder(getApplicationContext(),EntityItemListDB.class,"mainlistdatabase")
+            .allowMainThreadQueries()
+            .build();
 
 
     @Override
@@ -22,41 +25,28 @@ public class AddToMainListActivity extends AppCompatActivity implements View.OnC
         setContentView(R.layout.activity_add_to_main_list);
         setTitle("Add to list");
 
-        addBtn = (Button)findViewById(R.id.add_tolist_btn);
-        addBtn.setOnClickListener(this);
-        findBtn = (Button)findViewById(R.id.find_tolist_btn);
-        findBtn.setOnClickListener(this);
-        deleteBtn = (Button)findViewById(R.id.delete_tolist_btn);
-        deleteBtn.setOnClickListener(this);
-
         etListName = (EditText)findViewById(R.id.add_edit_tolist);
+        addBtn = (Button)findViewById(R.id.add_tolist_btn);
+        addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String listName = etListName.getText().toString();
+
+                EntityItemList entityItemList = new EntityItemList();
+                entityItemList.setListName(listName);
+
+                appDB.getEntityDao().insertAll(entityItemList);
+                entityItemList.setListName("");
+            }
+        });
+
+
 
 
 
 
     }
 
-    @Override
-    public void onClick(View v) {
-        EntityItemListDB appDB = Room.databaseBuilder(getApplicationContext(),EntityItemListDB.class,"mainlistdatabase")
-                .allowMainThreadQueries()
-                .build();
 
-        String listName  = etListName.getText().toString();
-
-        switch (v.getId()){
-            case R.id.add_tolist_btn:
-                appDB.getEntityDao().insertAll();
-
-                break;
-            case R.id.delete_tolist_btn:
-                //todo
-                break;
-            case R.id.find_tolist_btn:
-                //todo
-                break;
-
-        }
-
-    }
 }
