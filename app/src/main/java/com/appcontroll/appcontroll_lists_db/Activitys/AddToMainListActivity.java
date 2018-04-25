@@ -18,7 +18,6 @@ public class AddToMainListActivity extends AppCompatActivity{
             .allowMainThreadQueries()
             .build();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,13 +39,5 @@ public class AddToMainListActivity extends AppCompatActivity{
                 entityItemList.setListName("");
             }
         });
-
-
-
-
-
-
     }
-
-
 }

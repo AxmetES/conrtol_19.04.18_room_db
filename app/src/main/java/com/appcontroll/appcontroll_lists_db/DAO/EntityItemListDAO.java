@@ -31,5 +31,5 @@ public interface EntityItemListDAO {
     List<EntityItemList> getListName(String listName);
 
     @Query("SELECT * FROM todolisttb WHERE ownerId IS :ownerId")
-    List<TodoList> getToDoListForOwnerId(String ownerId);           //ERROR??
+    List<TodoList> getToDoListForOwnerId(String ownerId);
 }

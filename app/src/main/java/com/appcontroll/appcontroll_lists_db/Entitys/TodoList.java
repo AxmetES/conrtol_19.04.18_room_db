@@ -19,9 +19,10 @@ public class TodoList {
     @PrimaryKey
     private int id;
     @ColumnInfo(name = "todo_text")
-    String toDoText;
+    private String toDoText;
 
-    String ownerId;
+    @ColumnInfo(name = "ownerId")
+    private String ownerId;
 
     public TodoList() {
 
