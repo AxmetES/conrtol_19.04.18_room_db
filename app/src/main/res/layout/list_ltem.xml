@@ -11,5 +11,6 @@
         android:text="ma_list_tw"
         android:textSize="16dp"
         android:padding="8dp"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        android:clickable="true"/>
 </android.support.constraint.ConstraintLayout>
