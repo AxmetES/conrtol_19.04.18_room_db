@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView.Adapter adapter;
     FloatingActionButton fab;
     List<EntityItemList> entityItemLists;
-    private Context context;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.ma_list_rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        adapter = new MainListAdapter(context, appDB.getEntityDao().getAllEntity());
+        adapter = new MainListAdapter(getApplicationContext(), appDB.getEntityDao().getAllEntity());
         recyclerView.setAdapter(adapter);
 
         fab =  findViewById(R.id.fab);
