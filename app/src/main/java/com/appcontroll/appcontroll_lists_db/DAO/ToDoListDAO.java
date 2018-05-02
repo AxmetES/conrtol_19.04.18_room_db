@@ -19,8 +19,11 @@ public interface ToDoListDAO {
     @Delete
     void delete(TodoList todoList);
 
+    @Query("SELECT * FROM listnametb")
+    public List<EntityItemList> getlistnametb();
+
     @Query("SELECT * FROM todolisttb")
-    List<TodoList> getAllToDoItems();
+    public List<TodoList> getAllToDoItems();
 
     @Query("SELECT * FROM todolisttb WHERE todo_text LIKE :todo_text")
     List<TodoList> getTodoList (String todo_text);

@@ -1,6 +1,7 @@
 package com.appcontroll.appcontroll_lists_db.Activitys;
 
 import android.arch.persistence.room.Room;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,11 +13,10 @@ import com.appcontroll.appcontroll_lists_db.Entitys.EntityItemList;
 import com.appcontroll.appcontroll_lists_db.R;
 
 public class AddToMainListActivity extends AppCompatActivity{
-    Button addBtn, deleteBtn, findBtn;
+    Button addBtn, deleteBtn;
+
     EditText etListName;
-    EntityItemListDB appDB = Room.databaseBuilder(getApplicationContext(),EntityItemListDB.class,"mainlistdatabase")
-            .allowMainThreadQueries()
-            .build();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +35,12 @@ public class AddToMainListActivity extends AppCompatActivity{
                 EntityItemList entityItemList = new EntityItemList();
                 entityItemList.setListName(listName);
 
-                appDB.getEntityDao().insertAll(entityItemList);
+                MainActivity.appDB.getEntityDao().insertAll(entityItemList);
                 entityItemList.setListName("");
+
+                Intent i = new Intent();
+                setResult(RESULT_OK,i);
+                finish();
             }
         });
     }

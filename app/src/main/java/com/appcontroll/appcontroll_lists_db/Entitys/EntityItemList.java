@@ -16,7 +16,7 @@ public class EntityItemList {
     @PrimaryKey(autoGenerate = true)
     private int id;
 
-    @ColumnInfo(name = "list_name")
+@ColumnInfo(name = "list_name")
     private String listName;
 
     public EntityItemList() {
