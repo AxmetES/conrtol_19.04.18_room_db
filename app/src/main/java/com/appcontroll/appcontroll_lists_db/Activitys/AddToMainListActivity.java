@@ -12,6 +12,8 @@ import com.appcontroll.appcontroll_lists_db.EntityItemListDB;
 import com.appcontroll.appcontroll_lists_db.Entitys.EntityItemList;
 import com.appcontroll.appcontroll_lists_db.R;
 
+import static com.appcontroll.appcontroll_lists_db.Activitys.MainActivity.adapter;
+
 public class AddToMainListActivity extends AppCompatActivity{
     Button addBtn, deleteBtn;
 
@@ -38,9 +40,8 @@ public class AddToMainListActivity extends AppCompatActivity{
                 MainActivity.appDB.getEntityDao().insertAll(entityItemList);
                 entityItemList.setListName("");
 
-                Intent i = new Intent();
-                setResult(RESULT_OK,i);
-                finish();
+                startActivity(new Intent(AddToMainListActivity.this, MainActivity.class));
+
             }
         });
     }

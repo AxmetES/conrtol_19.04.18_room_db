@@ -20,8 +20,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     static EntityItemListDB appDB;
 
-    RecyclerView recyclerView;
-    RecyclerView.Adapter adapter;
+    static RecyclerView recyclerView;
+    static RecyclerView.Adapter adapter;
     FloatingActionButton fab;
     List<EntityItemList> entityItemLists;
 
