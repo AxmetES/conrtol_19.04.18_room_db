@@ -1,16 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
         android:id="@+id/ma_list_tw"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
+        android:clickable="true"
+        android:padding="8dp"
         android:text="ma_list_tw"
         android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent" />
+    <ImageView
+        android:id="@+id/list_item"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/item_ican"
+        android:layout_alignParentRight="true"
+        android:text="Button"
         android:padding="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        android:clickable="true"/>
+        android:layout_marginRight="5dp"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
 </android.support.constraint.ConstraintLayout>

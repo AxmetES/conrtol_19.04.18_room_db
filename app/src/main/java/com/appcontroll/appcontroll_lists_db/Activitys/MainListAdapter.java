@@ -4,9 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.appcontroll.appcontroll_lists_db.Entitys.EntityItemList;
 import com.appcontroll.appcontroll_lists_db.R;
@@ -29,7 +33,7 @@ class MainListAdapter extends RecyclerView.Adapter<MainListAdapter.ViewHolder>{
     }
 
     @Override
-    public void onBindViewHolder(MainListAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(final MainListAdapter.ViewHolder holder, final int position) {
         final EntityItemList entityRowName = entityItemLists.get(position);
 
         holder.listName.setText(entityItemLists.get(position).getListName());
@@ -41,6 +45,27 @@ class MainListAdapter extends RecyclerView.Adapter<MainListAdapter.ViewHolder>{
                 context.startActivity(intent);
             }
         });
+        holder.listMenuBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PopupMenu popupMenu = new PopupMenu(context,holder.listMenuBtn);
+                popupMenu.inflate(R.menu.option_menu);
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+
+                        entityItemLists.remove(position);
+                        notifyDataSetChanged();
+                        Toast.makeText(context,"list deleted", Toast.LENGTH_SHORT).show();
+                        return false;
+                    }
+
+                });
+                popupMenu.show();
+
+            }
+        });
     }
 
     @Override
@@ -50,6 +75,7 @@ class MainListAdapter extends RecyclerView.Adapter<MainListAdapter.ViewHolder>{
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView listName;
+        public ImageButton listMenuBtn;
         public ViewHolder(View itemView) {
             super(itemView);
             listName = itemView.findViewById(R.id.ma_list_tw);
