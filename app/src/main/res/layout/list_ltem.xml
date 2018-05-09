@@ -14,17 +14,18 @@
         android:text="ma_list_tw"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent" />
-    <ImageView
+
+    <ImageButton
         android:id="@+id/list_item"
         android:layout_width="wrap_content"
         android:layout_height="45dp"
         android:layout_centerVertical="true"
-        android:src="@drawable/item_ican"
-        android:layout_alignParentRight="true"
-        android:text="Button"
         android:padding="8dp"
-        android:layout_marginRight="5dp"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        android:src="@drawable/item_ican"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:contentDescription="TODO" />
 
 
 

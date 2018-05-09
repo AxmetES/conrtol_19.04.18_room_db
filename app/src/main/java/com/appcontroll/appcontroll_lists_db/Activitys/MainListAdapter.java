@@ -76,9 +76,11 @@ class MainListAdapter extends RecyclerView.Adapter<MainListAdapter.ViewHolder>{
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView listName;
         public ImageButton listMenuBtn;
+
         public ViewHolder(View itemView) {
             super(itemView);
             listName = itemView.findViewById(R.id.ma_list_tw);
+            listMenuBtn = (ImageButton) itemView.findViewById(R.id.list_item);
         }
     }
 }
