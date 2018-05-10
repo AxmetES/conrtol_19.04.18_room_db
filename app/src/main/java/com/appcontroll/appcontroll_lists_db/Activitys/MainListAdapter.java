@@ -56,6 +56,7 @@ class MainListAdapter extends RecyclerView.Adapter<MainListAdapter.ViewHolder>{
                     public boolean onMenuItemClick(MenuItem menuItem) {
 
                         entityItemLists.remove(position);
+                        MainActivity.appDB.getEntityDao().delete(entityRowName);
                         notifyDataSetChanged();
                         Toast.makeText(context,"list deleted", Toast.LENGTH_SHORT).show();
                         return false;
