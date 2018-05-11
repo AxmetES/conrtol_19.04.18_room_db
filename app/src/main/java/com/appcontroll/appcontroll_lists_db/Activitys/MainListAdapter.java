@@ -28,7 +28,7 @@ class MainListAdapter extends RecyclerView.Adapter<MainListAdapter.ViewHolder>{
 
     @Override
     public MainListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_ltem,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_ltem_rv,parent,false);
         return new ViewHolder(view);
     }
 
@@ -61,10 +61,8 @@ class MainListAdapter extends RecyclerView.Adapter<MainListAdapter.ViewHolder>{
                         Toast.makeText(context,"list deleted", Toast.LENGTH_SHORT).show();
                         return false;
                     }
-
                 });
                 popupMenu.show();
-
             }
         });
     }

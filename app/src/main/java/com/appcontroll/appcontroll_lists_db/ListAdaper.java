@@ -27,7 +27,7 @@ public class ListAdaper extends RecyclerView.Adapter<ListAdaper.ViewHolder>{
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = View.inflate(context, R.layout.list_ltem,null);
+        View view = View.inflate(context, R.layout.list_ltem_rv,null);
         return new ViewHolder(view);
     }
 
