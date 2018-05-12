@@ -27,15 +27,14 @@ public class TodoList {
     @ColumnInfo(name = "todo_text")
     private String toDoText;
 
-    @TypeConverters(TimestampConverter.class)
     @ColumnInfo(name = "todo_date")
+    @TypeConverters({TimestampConverter.class})
     private Date todoDate;
 
     @ColumnInfo(name = "ownerId")
     private String ownerId;
 
     public TodoList() {
-
     }
 
     public int getId() {
