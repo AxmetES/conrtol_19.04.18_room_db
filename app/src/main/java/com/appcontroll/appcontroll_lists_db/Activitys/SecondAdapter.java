@@ -16,13 +16,11 @@ import java.util.List;
 class SecondAdapter extends RecyclerView.Adapter<SecondAdapter.ViewHolder>{
     private List<TodoList> todoLists;
     private Context context;
-    private final SecondActivity
 
 
-    public SecondAdapter(List<TodoList> todoLists, Context context, SupportActivity.ExtraData extraData) {
+    public SecondAdapter(List<TodoList> todoLists, Context context) {
         this.todoLists = todoLists;
         this.context = context;
-        this.extraData = extraData;
     }
 
     @Override

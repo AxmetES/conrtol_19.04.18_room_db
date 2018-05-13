@@ -12,8 +12,10 @@ import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.appcontroll.appcontroll_lists_db.Entitys.TodoList;
 import com.appcontroll.appcontroll_lists_db.R;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class SecondActivity extends AppCompatActivity implements Callback{
@@ -21,10 +23,12 @@ public class SecondActivity extends AppCompatActivity implements Callback{
     static final int DILOG_ID = 0;
     TextView dl_text,dl_date_text;
 
+    private RecyclerView detailsRecyclerView;
+    private ArrayList<TodoList> todoLists;
     public Callback callback;
 
-    private RecyclerView detailsRecyclerView;
-    private SecondActivity detailAdapter;
+
+
 
 
 
@@ -38,16 +42,15 @@ public class SecondActivity extends AppCompatActivity implements Callback{
         day_x = cal.get(Calendar.DAY_OF_MONTH);
         showDialog();
 
-        callback = (Callback) getApplicationContext();
 
 
         Intent intent = getIntent();
 
-
-        detailsRecyclerView = findViewById(R.);
+        detailsRecyclerView = findViewById(R.id.sa_detail_rv);
+        detailsRecyclerView.setAdapter(new SecondAdapter(todoLists, getApplicationContext()));
     }
-    public void showDialog(){
 
+    public void showDialog(){
         dl_date_text= findViewById(R.id.dl_date_text);
         dl_date_text.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,8 +58,6 @@ public class SecondActivity extends AppCompatActivity implements Callback{
                 showDialog(DILOG_ID);
             }
         });
-
-
     }
 
     @Override
@@ -72,9 +73,7 @@ public class SecondActivity extends AppCompatActivity implements Callback{
                     year_x = year;
                     month_x = manthOfYear;
                     day_x = dayOfTheMonth;
-
                     Toast.makeText(SecondActivity.this, year_x + "/" + month_x +"/" + day_x,Toast.LENGTH_SHORT).show();
-
                 }
     };
 }

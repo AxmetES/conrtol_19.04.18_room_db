@@ -6,4 +6,6 @@
     android:layout_height="match_parent"
     tools:context="com.appcontroll.appcontroll_lists_db.Activitys.SecondActivity">
 
+    <include layout="@layout/content_second_recyclerview" />
+
 </android.support.constraint.ConstraintLayout>
