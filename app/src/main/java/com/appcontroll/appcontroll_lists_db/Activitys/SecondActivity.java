@@ -18,7 +18,7 @@ import com.appcontroll.appcontroll_lists_db.R;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class SecondActivity extends AppCompatActivity implements Callback{
+public class SecondActivity extends AppCompatActivity{
     int year_x,month_x,day_x;
     static final int DILOG_ID = 0;
     TextView dl_text,dl_date_text;
@@ -29,51 +29,13 @@ public class SecondActivity extends AppCompatActivity implements Callback{
 
 
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        final  Calendar cal = Calendar.getInstance();
-        year_x = cal.get(Calendar.YEAR);
-        month_x = cal.get(Calendar.MONTH);
-        day_x = cal.get(Calendar.DAY_OF_MONTH);
-        showDialog();
 
 
 
         Intent intent = getIntent();
-
-        detailsRecyclerView = findViewById(R.id.sa_detail_rv);
-        detailsRecyclerView.setAdapter(new SecondAdapter(todoLists, getApplicationContext()));
     }
-
-    public void showDialog(){
-        dl_date_text= findViewById(R.id.dl_date_text);
-        dl_date_text.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showDialog(DILOG_ID);
-            }
-        });
-    }
-
-    @Override
-    protected Dialog onCreateDialog(int id) {
-        if (id == DILOG_ID){
-            return new DatePickerDialog(this,dpickerListner, year_x,month_x,day_x);
-        }
-        return null;
-    }
-    private DatePickerDialog.OnDateSetListener dpickerListner = new DatePickerDialog.OnDateSetListener() {
-                @Override
-                public void onDateSet(DatePicker datePicker, int year, int manthOfYear, int dayOfTheMonth) {
-                    year_x = year;
-                    month_x = manthOfYear;
-                    day_x = dayOfTheMonth;
-                    Toast.makeText(SecondActivity.this, year_x + "/" + month_x +"/" + day_x,Toast.LENGTH_SHORT).show();
-                }
-    };
 }
