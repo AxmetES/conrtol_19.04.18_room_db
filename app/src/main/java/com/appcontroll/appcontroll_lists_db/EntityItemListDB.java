@@ -15,8 +15,7 @@ import com.appcontroll.appcontroll_lists_db.Entitys.TodoList;
  */
 
 @Database(entities = {EntityItemList.class, TodoList.class}, version = 1)
-@TypeConverters({TimestampConverter.class})
 public abstract class EntityItemListDB extends RoomDatabase {
     public abstract EntityItemListDAO getEntityDao();
-    public abstract ToDoListDAO toDoListDAO();
+    public abstract ToDoListDAO getDoListDAO();
 }

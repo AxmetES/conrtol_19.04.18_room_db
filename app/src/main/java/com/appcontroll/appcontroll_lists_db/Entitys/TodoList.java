@@ -28,8 +28,7 @@ public class TodoList {
     private String toDoText;
 
     @ColumnInfo(name = "todo_date")
-    @TypeConverters({TimestampConverter.class})
-    private Date todoDate;
+    private String todoDate;
 
     @ColumnInfo(name = "ownerId")
     private String ownerId;
@@ -51,7 +50,9 @@ public class TodoList {
     }
     public String getOwnerId() {return ownerId;}
     public void setOwnerId(String ownerId) {this.ownerId = ownerId;}
-    public Date getTodoDate() { return todoDate; }
-    public void setTodoDate(Date todoDate) { this.todoDate = todoDate; }
+
+    public String getTodoDate() { return todoDate; }
+
+    public void setTodoDate(String todoDate) { this.todoDate = todoDate; }
 }
 
