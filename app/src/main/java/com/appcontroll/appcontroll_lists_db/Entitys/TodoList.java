@@ -4,12 +4,6 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
-import android.arch.persistence.room.TypeConverter;
-import android.arch.persistence.room.TypeConverters;
-
-import com.appcontroll.appcontroll_lists_db.Activitys.TimestampConverter;
-
-import java.util.Date;
 
 /**
  * Created by АхметжановЕ on 19.04.2018.

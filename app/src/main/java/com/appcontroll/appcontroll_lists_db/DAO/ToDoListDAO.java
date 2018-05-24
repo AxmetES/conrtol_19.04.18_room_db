@@ -31,4 +31,6 @@ public interface ToDoListDAO {
 
     @Query("SELECT * FROM todolisttb WHERE todo_text LIKE :todo_text")
     List<TodoList> getTodoList (String todo_text);
+
+
 }

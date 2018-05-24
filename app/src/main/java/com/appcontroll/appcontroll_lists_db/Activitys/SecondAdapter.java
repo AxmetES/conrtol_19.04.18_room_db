@@ -1,5 +1,6 @@
 package com.appcontroll.appcontroll_lists_db.Activitys;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.support.v4.app.SupportActivity;
 import android.support.v7.widget.RecyclerView;
@@ -37,9 +38,6 @@ class SecondAdapter extends RecyclerView.Adapter<SecondAdapter.ViewHolder>{
         holder.dl_date_text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //тут должен быть метод календаря
-
-
 
             }
         });
