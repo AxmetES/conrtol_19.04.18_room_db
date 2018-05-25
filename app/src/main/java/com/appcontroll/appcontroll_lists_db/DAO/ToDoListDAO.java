@@ -31,7 +31,7 @@ public interface ToDoListDAO {
     public List<TodoList> getAllToDoItems();
 
     @Query("SELECT * FROM todolisttb WHERE todo_text LIKE :todo_text")
-    List<TodoList> getTodoListByListName(Bundle todo_text);
+    List<TodoList> getTodoListByListName(String todo_text);
 
 
 }

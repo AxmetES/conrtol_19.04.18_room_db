@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.accessibility.AccessibilityManager;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
 import android.widget.TextView;
@@ -42,7 +43,7 @@ class MainListAdapter extends RecyclerView.Adapter<MainListAdapter.ViewHolder>{
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context,SecondActivity.class);
-                intent.putExtra("ListName", (entityRowName.getListName()).toString());
+                intent.putExtra("ListName", entityRowName.getListName());
                 context.startActivity(intent);
             }
         });

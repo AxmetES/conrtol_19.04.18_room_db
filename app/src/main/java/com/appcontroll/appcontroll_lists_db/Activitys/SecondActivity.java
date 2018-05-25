@@ -43,13 +43,13 @@ public class SecondActivity extends AppCompatActivity{
         TextView textView = (TextView)findViewById(R.id.dl_text);
         date = (TextView)findViewById(R.id.dl_date_text);
 
-        Bundle bundle= getIntent().getExtras();
-        String message = bundle.toString();
+        Intent intent = getIntent();
+        String message = intent.getStringExtra("ListName");
         Toast.makeText(SecondActivity.this,"message"+ message,Toast.LENGTH_LONG).show();
 
         detailsRecyclerView = findViewById(R.id.sa_detail_rv);
         detailsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        detailAdapter = new SecondAdapter(EntityItemListDB.getAppDB(getApplicationContext()).getDoListDao().getTodoListByListName(message), getApplicationContext());
+        detailAdapter = new SecondAdapter(EntityItemListDB.getAppDB(SecondActivity.this).getDoListDao().getTodoListByListName(message), getApplicationContext());
         detailsRecyclerView.setAdapter(detailAdapter);
 
 
