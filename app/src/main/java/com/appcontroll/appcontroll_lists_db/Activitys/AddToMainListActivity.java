@@ -37,7 +37,7 @@ public class AddToMainListActivity extends AppCompatActivity{
                 EntityItemList entityItemList = new EntityItemList();
                 entityItemList.setListName(listName);
 
-                MainActivity.appDB.getEntityDao().insertAll(entityItemList);
+                EntityItemListDB.getAppDB(getApplicationContext()).getEntityDao().insertAll(entityItemList);
                 entityItemList.setListName("");
 
                 startActivity(new Intent(AddToMainListActivity.this, MainActivity.class));

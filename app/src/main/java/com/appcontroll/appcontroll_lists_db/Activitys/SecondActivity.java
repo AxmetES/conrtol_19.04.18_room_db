@@ -43,12 +43,14 @@ public class SecondActivity extends AppCompatActivity{
         TextView textView = (TextView)findViewById(R.id.dl_text);
         date = (TextView)findViewById(R.id.dl_date_text);
 
+        Bundle bundle= getIntent().getExtras();
+        String message = bundle.toString();
+        Toast.makeText(SecondActivity.this,"message"+ message,Toast.LENGTH_LONG).show();
+
         detailsRecyclerView = findViewById(R.id.sa_detail_rv);
         detailsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        detailAdapter = new SecondAdapter(MainActivity.appDB.getDoListDao().getAllToDoItems(), getApplicationContext());
+        detailAdapter = new SecondAdapter(EntityItemListDB.getAppDB(getApplicationContext()).getDoListDao().getTodoListByListName(message), getApplicationContext());
         detailsRecyclerView.setAdapter(detailAdapter);
-
 
 
 //        date.setOnClickListener(new View.OnClickListener() {
@@ -59,7 +61,6 @@ public class SecondActivity extends AppCompatActivity{
 //        });
 
 
-        Intent intent = getIntent();
 
     }
 
@@ -70,7 +71,8 @@ public class SecondActivity extends AppCompatActivity{
         int dayOfMonth=calendar.get(Calendar.DAY_OF_MONTH);
         datePickerDialog = new DatePickerDialog(SecondActivity.this, new DatePickerDialog.OnDateSetListener() {
             @Override
-            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth)
+            {
                 date.setText(dayOfMonth+" "+(month+1)+" "+year);
             }
         },year,month,dayOfMonth);

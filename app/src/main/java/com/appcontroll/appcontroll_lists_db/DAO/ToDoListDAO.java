@@ -4,6 +4,7 @@ import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
+import android.os.Bundle;
 
 import com.appcontroll.appcontroll_lists_db.Entitys.EntityItemList;
 import com.appcontroll.appcontroll_lists_db.Entitys.TodoList;
@@ -30,7 +31,7 @@ public interface ToDoListDAO {
     public List<TodoList> getAllToDoItems();
 
     @Query("SELECT * FROM todolisttb WHERE todo_text LIKE :todo_text")
-    List<TodoList> getTodoList (String todo_text);
+    List<TodoList> getTodoListByListName(Bundle todo_text);
 
 
 }

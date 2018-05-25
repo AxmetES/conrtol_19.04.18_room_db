@@ -21,7 +21,7 @@ import com.appcontroll.appcontroll_lists_db.R;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    static EntityItemListDB appDB;
+
 
     static RecyclerView recyclerView;
     static RecyclerView.Adapter adapter;
@@ -36,11 +36,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-            appDB = Room.databaseBuilder(getApplicationContext(),EntityItemListDB.class,"mainlistdatabase")
-                    .fallbackToDestructiveMigration()
-                    .allowMainThreadQueries()
-                    .build();
-
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -48,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.ma_list_rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        adapter = new MainListAdapter(getApplicationContext(), appDB.getEntityDao().getAllEntity());
+        adapter = new MainListAdapter(getApplicationContext(), EntityItemListDB.getAppDB(getApplicationContext()).getEntityDao().getAllEntity());
         recyclerView.setAdapter(adapter);
 
         fab =  findViewById(R.id.fab);
