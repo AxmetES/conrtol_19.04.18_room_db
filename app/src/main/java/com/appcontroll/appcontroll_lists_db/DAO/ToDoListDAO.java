@@ -30,8 +30,7 @@ public interface ToDoListDAO {
     @Query("SELECT * FROM todolisttb")
     public List<TodoList> getAllToDoItems();
 
-    @Query("SELECT * FROM todolisttb WHERE todo_text LIKE :todo_text")
-    List<TodoList> getTodoListByListName(String todo_text);
-
-
+    @Query("SELECT * FROM todolisttb WHERE ownerId LIKE :ownerId")
+    List<TodoList> getTodoListByListId(String ownerId);
 }
+

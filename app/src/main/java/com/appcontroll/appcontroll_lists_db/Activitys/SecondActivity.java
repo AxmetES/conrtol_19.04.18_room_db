@@ -49,7 +49,7 @@ public class SecondActivity extends AppCompatActivity{
 
         detailsRecyclerView = findViewById(R.id.sa_detail_rv);
         detailsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        detailAdapter = new SecondAdapter(EntityItemListDB.getAppDB(SecondActivity.this).getDoListDao().getTodoListByListName(message), getApplicationContext());
+        detailAdapter = new SecondAdapter(EntityItemListDB.getAppDB(SecondActivity.this).getDoListDao().getTodoListByListId(message), getApplicationContext());
         detailsRecyclerView.setAdapter(detailAdapter);
 
 

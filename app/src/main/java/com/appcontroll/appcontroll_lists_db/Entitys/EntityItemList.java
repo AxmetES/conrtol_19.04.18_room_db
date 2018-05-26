@@ -3,6 +3,7 @@ package com.appcontroll.appcontroll_lists_db.Entitys;
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.NonNull;
 
 import java.util.ArrayList;
 
@@ -25,7 +26,6 @@ public class EntityItemList {
     public EntityItemList(String listName, int id) {
         this.listName = listName;
         this.id = id;
-
     }
     public int getId() {
         return id;
