@@ -12,20 +12,26 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_margin="8dp"
-        android:text="enter To Do List:"/>
+        android:text="@string/ToDoTitle"/>
 
     <EditText
         android:id="@+id/add_edit_toDolist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/add_text_title_toDolist" />
+        app:layout_constraintTop_toBottomOf="@+id/add_text_title_toDolist"/>
 
-    <Button
-        android:id="@+id/add_tolist_btn"
+    <DatePicker
+        android:id="@+id/sa_add_datepicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/add_edit_toDolist"
+        app:layout_constraintTop_toBottomOf="@+id/add_edit_toDolist">
+    </DatePicker>
+    <Button
+        android:id="@+id/add_toDolist_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/sa_add_datepicker"
         android:text="add"/>
 
 

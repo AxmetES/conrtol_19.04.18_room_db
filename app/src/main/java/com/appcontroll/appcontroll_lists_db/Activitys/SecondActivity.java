@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.appcontroll.appcontroll_lists_db.EntityItemListDB;
+import com.appcontroll.appcontroll_lists_db.Entitys.EntityItemList;
 import com.appcontroll.appcontroll_lists_db.Entitys.TodoList;
 import com.appcontroll.appcontroll_lists_db.R;
 
@@ -24,17 +25,14 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 public class SecondActivity extends AppCompatActivity{
-    TextView dl_text,dl_date_text;
-     static DatePickerDialog datePickerDialog;
 
-    private RecyclerView detailsRecyclerView;
+    TextView dl_text,dl_date_text;
+    static DatePickerDialog datePickerDialog;
+    RecyclerView detailsRecyclerView;
     RecyclerView.Adapter detailAdapter;
     private ArrayList<TodoList> todoLists;
     TextView date;
     FloatingActionButton fab;
-
-
-
 
 
     @Override
@@ -42,17 +40,18 @@ public class SecondActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
+
         TextView textView = (TextView)findViewById(R.id.dl_text);
         date = (TextView)findViewById(R.id.dl_date_text);
-
-        Intent intent = getIntent();
-        int message = getIntent().getExtras().getInt("ListId");
-        Toast.makeText(SecondActivity.this,"message"+ message,Toast.LENGTH_LONG).show();
-
         detailsRecyclerView = findViewById(R.id.sa_detail_rv);
         detailsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        detailAdapter = new SecondAdapter(EntityItemListDB.getAppDB(SecondActivity.this).getDoListDao().getTodoListByListId(message), getApplicationContext());
-        detailsRecyclerView.setAdapter(detailAdapter);
+
+        Intent intent = getIntent();
+            int message = getIntent().getExtras().getInt("ListId");
+            Toast.makeText(SecondActivity.this,"message"+ message,Toast.LENGTH_LONG).show();
+            detailAdapter = new SecondAdapter(getApplicationContext(), EntityItemListDB.getAppDB(getApplicationContext()).getDoListDao().getTodoListByListId(message));
+            detailsRecyclerView.setAdapter(detailAdapter);
+
 
         fab =  findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

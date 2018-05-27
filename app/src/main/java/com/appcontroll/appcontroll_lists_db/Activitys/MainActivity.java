@@ -22,8 +22,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-
-    static RecyclerView recyclerView;
+    RecyclerView recyclerView;
     static RecyclerView.Adapter adapter;
     FloatingActionButton fab;
     List<EntityItemList> entityItemLists;
