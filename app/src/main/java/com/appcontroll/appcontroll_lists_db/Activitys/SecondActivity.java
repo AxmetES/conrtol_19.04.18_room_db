@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -30,6 +31,7 @@ public class SecondActivity extends AppCompatActivity{
     RecyclerView.Adapter detailAdapter;
     private ArrayList<TodoList> todoLists;
     TextView date;
+    FloatingActionButton fab;
 
 
 
@@ -44,13 +46,22 @@ public class SecondActivity extends AppCompatActivity{
         date = (TextView)findViewById(R.id.dl_date_text);
 
         Intent intent = getIntent();
-        String message = intent.getStringExtra("ListName");
+        int message = getIntent().getExtras().getInt("ListId");
         Toast.makeText(SecondActivity.this,"message"+ message,Toast.LENGTH_LONG).show();
 
         detailsRecyclerView = findViewById(R.id.sa_detail_rv);
         detailsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         detailAdapter = new SecondAdapter(EntityItemListDB.getAppDB(SecondActivity.this).getDoListDao().getTodoListByListId(message), getApplicationContext());
         detailsRecyclerView.setAdapter(detailAdapter);
+
+        fab =  findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SecondActivity.this, AddToToDoListActivity.class));
+
+            }
+        });
 
 
 //        date.setOnClickListener(new View.OnClickListener() {

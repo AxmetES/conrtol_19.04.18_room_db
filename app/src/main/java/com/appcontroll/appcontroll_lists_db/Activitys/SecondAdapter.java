@@ -2,6 +2,7 @@ package com.appcontroll.appcontroll_lists_db.Activitys;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.SupportActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -17,6 +18,7 @@ import java.util.List;
 class SecondAdapter extends RecyclerView.Adapter<SecondAdapter.ViewHolder>{
     private List<TodoList> todoLists;
     private Context context;
+    FloatingActionButton fab;
 
 
     public SecondAdapter(List<TodoList> todoLists, Context context) {

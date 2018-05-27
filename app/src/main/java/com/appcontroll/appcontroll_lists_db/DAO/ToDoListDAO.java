@@ -31,6 +31,6 @@ public interface ToDoListDAO {
     public List<TodoList> getAllToDoItems();
 
     @Query("SELECT * FROM todolisttb WHERE ownerId LIKE :ownerId")
-    List<TodoList> getTodoListByListId(String ownerId);
+    List<TodoList> getTodoListByListId(int ownerId);
 }
 
