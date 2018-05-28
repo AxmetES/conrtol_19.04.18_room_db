@@ -12,26 +12,31 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_margin="8dp"
-        android:text="@string/ToDoTitle"/>
-
+        android:text="add data to ToDoList :"/>
     <EditText
         android:id="@+id/add_edit_toDolist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/add_text_title_toDolist"/>
-
-    <DatePicker
-        android:id="@+id/sa_add_datepicker"
-        android:layout_width="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/add_text_title_toDolist"
+        android:hint="enter to do text"
+        android:layout_margin="8dp"/>
+    <TextView
+        android:id="@+id/add_date_toDolist"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/add_edit_toDolist">
-    </DatePicker>
+        app:layout_constraintTop_toBottomOf="@+id/add_edit_toDolist"
+        android:hint="enter to do date"
+        android:layout_margin="8dp"
+        android:textSize="18dp"
+        android:clickable="true"/>
+
+
+
     <Button
         android:id="@+id/add_toDolist_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/sa_add_datepicker"
+        app:layout_constraintTop_toBottomOf="@+id/add_date_toDolist"
         android:text="add"/>
 
 

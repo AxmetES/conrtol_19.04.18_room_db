@@ -1,13 +1,11 @@
-package com.appcontroll.appcontroll_lists_db.Activitys;
+package com.appcontroll.appcontroll_lists_db.Adapters;
 
-import android.app.DatePickerDialog;
 import android.content.Context;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.SupportActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.appcontroll.appcontroll_lists_db.Entitys.TodoList;
@@ -15,9 +13,10 @@ import com.appcontroll.appcontroll_lists_db.R;
 
 import java.util.List;
 
-class SecondAdapter extends RecyclerView.Adapter<SecondAdapter.ViewHolder>{
-    private List<TodoList> todoLists;
+public class SecondAdapter extends RecyclerView.Adapter<SecondAdapter.ViewHolder>{
     private final Context context;
+    private List<TodoList> todoLists;
+
 
 
     public SecondAdapter(Context context, List<TodoList> todoLists) {
@@ -34,17 +33,14 @@ class SecondAdapter extends RecyclerView.Adapter<SecondAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         final TodoList todoList = todoLists.get(position);
-        holder.dl_text.setText(todoList.getToDoText());
-        holder.dl_date_text.setText((CharSequence) todoList.getTodoDate());
-        holder.dl_date_text.setOnClickListener(new View.OnClickListener() {
+        holder.dl_text.setText(todoLists.get(position).getToDoText());
+        holder.dl_date_text.setText((CharSequence)todoLists.get(position).getTodoDate());
+        holder.dl_detail_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                //добавить меню для удаления обекта из базы
             }
         });
-
-
-
     }
 
     @Override
@@ -55,11 +51,15 @@ class SecondAdapter extends RecyclerView.Adapter<SecondAdapter.ViewHolder>{
     public class ViewHolder extends RecyclerView.ViewHolder
     {
         public TextView dl_text,dl_date_text;
+        public ImageButton dl_detail_item;
+
 
         public ViewHolder(View itemView) {
             super(itemView);
             dl_text = (TextView) itemView.findViewById(R.id.dl_text);
             dl_date_text = (TextView) itemView.findViewById(R.id.dl_date_text);
+            dl_detail_item = (ImageButton)itemView.findViewById(R.id.dl_detail_item);
+
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.appcontroll.appcontroll_lists_db.Activitys;
+package com.appcontroll.appcontroll_lists_db.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,19 +7,19 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.accessibility.AccessibilityManager;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.appcontroll.appcontroll_lists_db.Activitys.SecondActivity;
 import com.appcontroll.appcontroll_lists_db.EntityItemListDB;
 import com.appcontroll.appcontroll_lists_db.Entitys.EntityItemList;
 import com.appcontroll.appcontroll_lists_db.R;
 
 import java.util.List;
 
-class MainListAdapter extends RecyclerView.Adapter<MainListAdapter.ViewHolder>{
+public class MainListAdapter extends RecyclerView.Adapter<MainListAdapter.ViewHolder>{
     private final Context context;
     private List<EntityItemList> entityItemLists;
 

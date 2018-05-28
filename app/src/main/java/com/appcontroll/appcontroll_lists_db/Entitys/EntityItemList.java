@@ -6,6 +6,7 @@ import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by АхметжановЕ on 19.04.2018.
@@ -19,6 +20,7 @@ public class EntityItemList {
 
 @ColumnInfo(name = "list_name")
     private String listName;
+
 
     public EntityItemList() {
     }
