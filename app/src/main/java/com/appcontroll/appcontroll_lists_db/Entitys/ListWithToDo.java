@@ -7,8 +7,7 @@ import java.util.List;
 
 public class ListWithToDo {
     @Embedded
-    public EntityItemList entityItemList;
-    @Relation(parentColumn = "id", entity = TodoList.class, entityColumn = "ownerId")
-    public List<TodoList> todoLists;
-
+        public EntityItemList entityItemList;
+    @Relation(parentColumn = "id",entityColumn = "ownerId", entity = TodoList.class)
+        public List<TodoList> todoLists;
 }

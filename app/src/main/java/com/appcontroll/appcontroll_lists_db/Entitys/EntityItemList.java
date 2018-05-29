@@ -2,6 +2,7 @@ package com.appcontroll.appcontroll_lists_db.Entitys;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
@@ -13,14 +14,13 @@ import java.util.List;
  */
 
 @Entity(tableName = "listnametb")
-public class EntityItemList {
+    public class EntityItemList {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
 
 @ColumnInfo(name = "list_name")
     private String listName;
-
 
     public EntityItemList() {
     }
@@ -41,6 +41,5 @@ public class EntityItemList {
     public void setListName(String listName) {
         this.listName = listName;
     }
-
 }
 

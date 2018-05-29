@@ -9,11 +9,14 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.appcontroll.appcontroll_lists_db.EntityItemListDB;
 import com.appcontroll.appcontroll_lists_db.Entitys.EntityItemList;
 import com.appcontroll.appcontroll_lists_db.Entitys.TodoList;
 import com.appcontroll.appcontroll_lists_db.R;
+
+import org.w3c.dom.Text;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -22,7 +25,7 @@ public class AddToToDoListActivity extends AppCompatActivity {
 
     Button addBtn;
     EditText etDoListName;
-    TextView etDateBtn;
+    TextView etDateBtn,etName;
     Calendar mCurrentDate;
     int day,month,year;
 
@@ -33,8 +36,15 @@ public class AddToToDoListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_to_to_do_list);
         setTitle("Add to Do List");
 
+        Intent intent = getIntent();
+        final int message = getIntent().getExtras().getInt("ListId");
+        final String message2 = getIntent().getExtras().getString("ListName");
+        Toast.makeText(AddToToDoListActivity.this,"list id"  +  message,Toast.LENGTH_LONG).show();
+
         etDoListName = (EditText)findViewById(R.id.add_edit_toDolist);
         etDateBtn = (TextView) findViewById(R.id.add_date_toDolist);
+        etName = (TextView) findViewById(R.id.list_name_add_tv);
+        etName.setText(message2);
 
         mCurrentDate = Calendar.getInstance();
         day = mCurrentDate.get(Calendar.DAY_OF_MONTH);
@@ -64,13 +74,10 @@ public class AddToToDoListActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 String toDoListText = etDoListName.getText().toString();
-
                 TodoList todoList = new TodoList();
                 todoList.setToDoText(toDoListText);
-
                 EntityItemListDB.getAppDB(getApplicationContext()).getDoListDao().insertAll(todoList);
                 todoList.setToDoText("");
-
                 startActivity(new Intent(AddToToDoListActivity.this, SecondActivity.class));
             }
         });

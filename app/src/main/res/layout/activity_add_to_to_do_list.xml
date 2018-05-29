@@ -8,18 +8,28 @@
 
     <TextView
         android:id="@+id/add_text_title_toDolist"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_margin="8dp"
+        android:layout_margin="10dp"
         android:text="add data to ToDoList :"/>
+
+    <TextView
+        android:id="@+id/list_name_add_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="list name"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/add_text_title_toDolist"/>
+
     <EditText
         android:id="@+id/add_edit_toDolist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/add_text_title_toDolist"
-        android:hint="enter to do text"
         android:layout_margin="8dp"/>
+
     <TextView
         android:id="@+id/add_date_toDolist"
         android:layout_width="match_parent"
@@ -29,8 +39,6 @@
         android:layout_margin="8dp"
         android:textSize="18dp"
         android:clickable="true"/>
-
-
 
     <Button
         android:id="@+id/add_toDolist_btn"

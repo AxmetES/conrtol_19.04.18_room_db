@@ -14,8 +14,7 @@ import android.support.annotation.NonNull;
         foreignKeys = @ForeignKey(
         entity = EntityItemList.class,
         parentColumns = "id",
-        childColumns = "ownerId",
-                onDelete = ForeignKey.CASCADE))
+        childColumns = "ownerId"))
 public class TodoList {
 
 
@@ -29,9 +28,9 @@ public class TodoList {
     private String todoDate;
 
     @ColumnInfo(name = "ownerId")
-    private String ownerId;
+    private int ownerId;
 
-    public TodoList(int id, String toDoText, String todoDate, String ownerId) {
+    public TodoList(int id, String toDoText, String todoDate, int ownerId) {
         this.id = id;
         this.toDoText = toDoText;
         this.todoDate = todoDate;
@@ -66,11 +65,11 @@ public class TodoList {
         this.todoDate = todoDate;
     }
 
-    public String getOwnerId() {
+    public int getOwnerId() {
         return ownerId;
     }
 
-    public void setOwnerId(String ownerId) {
+    public void setOwnerId(int ownerId) {
         this.ownerId = ownerId;
     }
 }

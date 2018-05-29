@@ -7,6 +7,7 @@ import android.arch.persistence.room.Query;
 import android.os.Bundle;
 
 import com.appcontroll.appcontroll_lists_db.Entitys.EntityItemList;
+import com.appcontroll.appcontroll_lists_db.Entitys.ListWithToDo;
 import com.appcontroll.appcontroll_lists_db.Entitys.TodoList;
 
 import java.util.Date;
@@ -27,10 +28,9 @@ public interface ToDoListDAO {
     @Query("SELECT * FROM todolisttb ORDER BY todo_date")
     public List<TodoList> getDate();
 
-    @Query("SELECT * FROM todolisttb")
-    public List<TodoList> getAllToDoItems();
+    @Query("SELECT * from todolisttb where ownerId = :id")
+    public List<TodoList> fromToDoById(int id);
 
-    @Query("SELECT * FROM todolisttb WHERE ownerId IS :ownerId")
-    List<TodoList> getTodoListByListId(int ownerId);
+
 }
 
