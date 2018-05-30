@@ -31,15 +31,13 @@ public class SecondActivity extends AppCompatActivity{
         setContentView(R.layout.activity_second);
 
         Intent intent = getIntent();
-        final int message = getIntent().getExtras().getInt("ListId");
-        final String message2 = getIntent().getExtras().getString("ListName");
-        Toast.makeText(SecondActivity.this,"id"  +  message,Toast.LENGTH_LONG).show();
-        Toast.makeText(SecondActivity.this,"name"  +  message2,Toast.LENGTH_LONG).show();
+        final String message = getIntent().getExtras().getString("ListName");
+        Toast.makeText(SecondActivity.this,"ListName "  +  message,Toast.LENGTH_LONG).show();
 
         detailsRecyclerView = findViewById(R.id.sa_detail_rv);
         detailsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        detailAdapter = new SecondAdapter(getApplicationContext(), EntityItemListDB.getAppDB(getApplicationContext()).getDoListDao().fromToDoById(message));
+        detailAdapter = new SecondAdapter(getApplicationContext(), EntityItemListDB.getAppDB(getApplicationContext()).getDoListDao().fromToDoByOwnerId(message));
         detailsRecyclerView.setAdapter(detailAdapter);
 
 
@@ -48,9 +46,8 @@ public class SecondActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SecondActivity.this,AddToToDoListActivity.class);
-                intent.putExtra("ListId ", message);
-                intent.putExtra("ListName", message2);
-                Toast.makeText(SecondActivity.this,"id"  +  message + "name" + message2,Toast.LENGTH_LONG).show();
+                intent.putExtra("ListName", message);
+                Toast.makeText(SecondActivity.this,"ListName"  +  message,Toast.LENGTH_LONG).show();
                 SecondActivity.this.startActivity(intent);
 //              startActivity(new Intent(SecondActivity.this, AddToToDoListActivity.class));
 

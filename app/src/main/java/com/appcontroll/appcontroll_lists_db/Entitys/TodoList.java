@@ -13,7 +13,7 @@ import android.support.annotation.NonNull;
 @Entity(tableName = "todolisttb",
         foreignKeys = @ForeignKey(
         entity = EntityItemList.class,
-        parentColumns = "id",
+        parentColumns = "list_name",
         childColumns = "ownerId"))
 public class TodoList {
 
@@ -28,9 +28,9 @@ public class TodoList {
     private String todoDate;
 
     @ColumnInfo(name = "ownerId")
-    private int ownerId;
+    private String ownerId;
 
-    public TodoList(int id, String toDoText, String todoDate, int ownerId) {
+    public TodoList(int id, String toDoText, String todoDate, String ownerId) {
         this.id = id;
         this.toDoText = toDoText;
         this.todoDate = todoDate;
@@ -65,11 +65,11 @@ public class TodoList {
         this.todoDate = todoDate;
     }
 
-    public int getOwnerId() {
+    public String getOwnerId() {
         return ownerId;
     }
 
-    public void setOwnerId(int ownerId) {
+    public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
 }

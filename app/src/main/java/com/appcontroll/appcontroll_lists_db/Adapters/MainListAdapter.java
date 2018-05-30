@@ -43,7 +43,6 @@ public class MainListAdapter extends RecyclerView.Adapter<MainListAdapter.ViewHo
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context,SecondActivity.class);
-                intent.putExtra("ListId", entityRowName.getId());
                 intent.putExtra("ListName", entityRowName.getListName());
                 context.startActivity(intent);
             }

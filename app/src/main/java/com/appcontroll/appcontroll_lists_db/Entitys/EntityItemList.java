@@ -16,25 +16,18 @@ import java.util.List;
 @Entity(tableName = "listnametb")
     public class EntityItemList {
 
-    @PrimaryKey(autoGenerate = true)
-    private int id;
-
-@ColumnInfo(name = "list_name")
+    @PrimaryKey
+    @NonNull
+    @ColumnInfo(name = "list_name")
     private String listName;
 
     public EntityItemList() {
     }
 
-    public EntityItemList(String listName, int id) {
+    public EntityItemList(String listName) {
         this.listName = listName;
-        this.id = id;
     }
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
+
     public String getListName() {
         return listName;
     }

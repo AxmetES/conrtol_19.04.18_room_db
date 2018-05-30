@@ -28,8 +28,8 @@ public interface ToDoListDAO {
     @Query("SELECT * FROM todolisttb ORDER BY todo_date")
     public List<TodoList> getDate();
 
-    @Query("SELECT * from todolisttb where ownerId = :id")
-    public List<TodoList> fromToDoById(int id);
+    @Query("SELECT * from todolisttb where ownerId = :list_name")
+    public List<TodoList> fromToDoByOwnerId(String list_name);
 
 
 }

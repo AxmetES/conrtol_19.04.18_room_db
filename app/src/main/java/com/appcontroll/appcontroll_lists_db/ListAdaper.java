@@ -40,7 +40,7 @@ public class ListAdaper extends RecyclerView.Adapter<ListAdaper.ViewHolder>{
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, SecondActivity.class);
-                intent.putExtra("id", entityItemList.getId());
+                intent.putExtra("listName", entityItemList.getListName());
                 context.startActivity(intent);
             }
         });

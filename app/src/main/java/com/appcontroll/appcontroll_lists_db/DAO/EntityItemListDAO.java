@@ -27,8 +27,8 @@ public interface EntityItemListDAO {
     @Query("SELECT * FROM listnametb")
     List<EntityItemList> getAllEntity();
 
-    @Query("SELECT * FROM listnametb WHERE list_name LIKE :listName")
-    List<EntityItemList> getListName(String listName);
+    @Query("SELECT * FROM listnametb WHERE list_name LIKE :list_name")
+    List<EntityItemList> getListName(String list_name);
 
     @Query("SELECT * FROM todolisttb WHERE ownerId IS :ownerId")
     List<TodoList> getToDoListForOwnerId(String ownerId);
