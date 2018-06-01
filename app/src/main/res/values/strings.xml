@@ -5,4 +5,5 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="ToDoTitle">enter To Do List:</string>
+    <string name="title_activity_second2">SecondActivity2</string>
 </resources>

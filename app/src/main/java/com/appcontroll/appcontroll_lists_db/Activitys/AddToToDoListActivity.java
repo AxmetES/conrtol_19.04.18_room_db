@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -12,20 +13,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.appcontroll.appcontroll_lists_db.EntityItemListDB;
-import com.appcontroll.appcontroll_lists_db.Entitys.EntityItemList;
 import com.appcontroll.appcontroll_lists_db.Entitys.TodoList;
 import com.appcontroll.appcontroll_lists_db.R;
 
-import org.w3c.dom.Text;
-
 import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
 
 public class AddToToDoListActivity extends AppCompatActivity {
 
     Button addBtn;
-    EditText etDoListName;
+    EditText etToDoText;
     TextView etDateBtn,etName;
     Calendar mCurrentDate;
     int day,month,year;
@@ -37,11 +33,14 @@ public class AddToToDoListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_to_to_do_list);
         setTitle("Add to Do List");
 
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         Intent intent = getIntent();
         final String message = getIntent().getExtras().getString("ListName");
         Toast.makeText(AddToToDoListActivity.this,"ListName"  +  message,Toast.LENGTH_LONG).show();
 
-        etDoListName = (EditText)findViewById(R.id.add_edit_toDolist);
+        etToDoText = (EditText)findViewById(R.id.add_edit_toDolist);
         etDateBtn = (TextView) findViewById(R.id.add_date_toDolist);
         etName = (TextView) findViewById(R.id.list_name_add_tv);
         etName.setText(message);
@@ -73,17 +72,25 @@ public class AddToToDoListActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String toDoTextTe = etDoListName.getText().toString();
+                String toDoTextTe = etToDoText.getText().toString();
                 String toDoDateTe = etDateBtn.getText().toString();
                 String toDoWonerId = etName.getText().toString();
                 TodoList todoList = new TodoList();
                 todoList.setToDoText(toDoTextTe);
-                todoList.setToDoText(toDoDateTe);
+                todoList.setTodoDate(toDoDateTe);
                 todoList.setOwnerId(toDoWonerId);
                 EntityItemListDB.getAppDB(getApplicationContext()).getDoListDao().insertAll(todoList);
-                todoList.setToDoText("");
-                startActivity(new Intent(AddToToDoListActivity.this, SecondActivity.class));
+                startActivity(new Intent(AddToToDoListActivity.this, SecondActivity.class).putExtra("ListName", todoList.getOwnerId()));
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == android.R.id.home){
+            this.finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

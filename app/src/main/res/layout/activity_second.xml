@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.appcontroll.appcontroll_lists_db.Activitys.SecondActivity">
-
+    tools:context=".Activitys.SecondActivity">
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,11 +12,11 @@
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="?attr/actionBarSize"
             android:background="#C5CAE9"
             app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:title="To Do View"/>
+            app:title="To Do View" />
 
     </android.support.design.widget.AppBarLayout>
 
@@ -31,7 +30,6 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@drawable/ic_add_circle"/>
-
 
 
 </android.support.design.widget.CoordinatorLayout>

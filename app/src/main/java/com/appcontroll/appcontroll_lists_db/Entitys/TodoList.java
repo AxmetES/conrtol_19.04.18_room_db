@@ -44,15 +44,11 @@ public class TodoList {
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
 
-    public String getToDoText() {
-        return toDoText;
-    }
-
+    public String getToDoText() { return toDoText; }
     public void setToDoText(String toDoText) {
         this.toDoText = toDoText;
     }
@@ -60,7 +56,6 @@ public class TodoList {
     public String getTodoDate() {
         return todoDate;
     }
-
     public void setTodoDate(String todoDate) {
         this.todoDate = todoDate;
     }
@@ -68,7 +63,6 @@ public class TodoList {
     public String getOwnerId() {
         return ownerId;
     }
-
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
