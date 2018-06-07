@@ -6,4 +6,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="ToDoTitle">enter To Do List:</string>
     <string name="title_activity_second2">SecondActivity2</string>
+    <string name="blue">select blue color</string>
+    <string name="red">select red color</string>
+    <string name="yellow">select yellow color</string>
 </resources>

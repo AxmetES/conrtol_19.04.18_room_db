@@ -17,7 +17,8 @@
             android:layout_height="?attr/actionBarSize"
             android:background="#C5CAE9"
             app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:title="List View"/>
+            app:title="List View"
+            />
 
     </android.support.design.widget.AppBarLayout>
 
@@ -32,5 +33,9 @@
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@drawable/ic_add_circle"/>
 
+    <FrameLayout
+        android:id="@+id/main_menu_fragment_conteiner"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </android.support.design.widget.CoordinatorLayout>

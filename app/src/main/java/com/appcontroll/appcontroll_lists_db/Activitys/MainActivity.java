@@ -3,6 +3,7 @@ package com.appcontroll.appcontroll_lists_db.Activitys;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -12,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.appcontroll.appcontroll_lists_db.Adapters.MainListAdapter;
@@ -27,9 +29,8 @@ public class MainActivity extends AppCompatActivity {
     static RecyclerView.Adapter adapter;
     FloatingActionButton fab;
     List<EntityItemList> entityItemLists;
-
     final int MENU_DELETE = 1;
-
+    private FrameLayout fragmentContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         registerForContextMenu(recyclerView);
+
+        fragmentContainer = (FrameLayout) findViewById(R.id.main_menu_fragment_conteiner);
     }
 
     @Override
@@ -68,11 +71,20 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId())
         {
             case R.id.menu_settings:
-                Toast.makeText(this,"settings set", Toast.LENGTH_SHORT).show();
+                item.setOnMenuItemClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        openFragment();
+                    }
+                });
 
             case R.id.menu_about:
                 Toast.makeText(this,"about text", Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);
+    }
+    public void openFragment(String text)
+    {
+
     }
 }
