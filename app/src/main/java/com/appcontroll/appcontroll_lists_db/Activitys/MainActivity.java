@@ -1,5 +1,7 @@
 package com.appcontroll.appcontroll_lists_db.Activitys;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -56,7 +58,9 @@ public class MainActivity extends AppCompatActivity {
         });
         registerForContextMenu(recyclerView);
 
-        fragmentContainer = (FrameLayout) findViewById(R.id.main_menu_fragment_conteiner);
+        //fragmentContainer = (FrameLayout) findViewById(R.id.main_menu_fragment_conteiner);
+
+
     }
 
     @Override
@@ -74,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 item.setOnMenuItemClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        openFragment();
+
                     }
                 });
 
@@ -83,8 +87,13 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-    public void openFragment(String text)
-    {
+
+    public void changeFragment(View view){
+        Fragment fragment = new MainMenuFragment();
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(R.id.main_menu_fragment_conteiner, fragment);
+        ft.commit();
 
     }
 }

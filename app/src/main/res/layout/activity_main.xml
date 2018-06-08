@@ -33,7 +33,7 @@
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@drawable/ic_add_circle"/>
 
-    <FrameLayout
+    <fragment
         android:id="@+id/main_menu_fragment_conteiner"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
