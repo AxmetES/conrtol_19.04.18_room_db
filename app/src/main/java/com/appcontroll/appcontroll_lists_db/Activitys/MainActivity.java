@@ -72,24 +72,15 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId())
-        {
-            case R.id.menu_settings:
-                item.setOnMenuItemClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                    }
-                });
-
-            case R.id.menu_about:
-                Toast.makeText(this,"about text", Toast.LENGTH_SHORT).show();
+        int itemId = item.getItemId();
+        if(itemId == R.id.main_menu_fragment_conteiner){
+            changeFragment();
         }
         return super.onOptionsItemSelected(item);
     }
 
-    public void changeFragment(View view){
-        Fragment fragment = new MainMenuFragment();
+    public void changeFragment(){
+        android.app.Fragment fragment = new android.app.Fragment();
         FragmentManager fm = getFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.main_menu_fragment_conteiner, fragment);

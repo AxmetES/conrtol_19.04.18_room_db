@@ -35,7 +35,8 @@
 
     <fragment
         android:id="@+id/main_menu_fragment_conteiner"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_width="384dp"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_main_menu"/>
 
 </android.support.design.widget.CoordinatorLayout>
