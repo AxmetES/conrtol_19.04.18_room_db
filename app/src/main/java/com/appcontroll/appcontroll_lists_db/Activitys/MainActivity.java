@@ -67,13 +67,18 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.activity_main_menu,menu);
-        return super.onCreateOptionsMenu(menu);
+        return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int itemId = item.getItemId();
-        if(itemId == R.id.main_menu_fragment_conteiner){
+        if(item.getItemId() == R.id.menu_settings){
+            changeFragment();
+        }
+        if(item.getItemId() == R.id.menu_about){
+            changeFragment();
+        }
+        if(item.getItemId() == R.id.menu_app_exit){
             changeFragment();
         }
         return super.onOptionsItemSelected(item);
@@ -83,8 +88,7 @@ public class MainActivity extends AppCompatActivity {
         android.app.Fragment fragment = new android.app.Fragment();
         FragmentManager fm = getFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.main_menu_fragment_conteiner, fragment);
+        ft.replace(R.id.color_change_fragment, fragment);
         ft.commit();
-
     }
 }
