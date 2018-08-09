@@ -7,12 +7,13 @@
     tools:context=".Activitys.MainMenuFragment">
 
     <!-- TODO: Update blank fragment layout -->
-  <LinearLayout android:orientation="vertical"
+  <RelativeLayout android:orientation="vertical"
       android:layout_height="match_parent"
       android:layout_width="match_parent"
       android:layout_margin="8dp">
 
       <RadioGroup
+          android:id="@+id/color_radio_group"
           android:layout_width="match_parent"
           android:layout_height="wrap_content">
 
@@ -35,13 +36,15 @@
                 android:text="@string/yellow"/>
 
       </RadioGroup>
-
       <Button
-          android:id="@+id/main_colorcahnge_btn"
+          android:id="@+id/main_color_change_btn"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:text="change"
+          android:layout_above="@+id/color_radio_group"
           android:layout_marginTop="30dp"/>
-  </LinearLayout>
+
+
+  </RelativeLayout>
 
 </RelativeLayout>

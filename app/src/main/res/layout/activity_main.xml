@@ -14,7 +14,7 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="?android:attr/actionBarSize"
             android:background="#C5CAE9"
             app:popupTheme="@style/AppTheme.PopupOverlay"
             app:title="List View"
@@ -33,10 +33,10 @@
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@drawable/ic_add_circle"/>
 
-    <fragment
+    <FrameLayout
+        android:id="@+id/main_fragment_layout"
         android:name="com.appcontroll.appcontroll_lists_db.Activitys.MainMenuFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout="@layout/fragment_main_menu"/>
+        android:layout_height="match_parent"/>
 
 </android.support.design.widget.CoordinatorLayout>

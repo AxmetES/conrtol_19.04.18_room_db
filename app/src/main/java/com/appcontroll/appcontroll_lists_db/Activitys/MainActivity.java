@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         });
         registerForContextMenu(recyclerView);
 
-        //fragmentContainer = (FrameLayout) findViewById(R.id.main_menu_fragment_conteiner);
+        fragmentContainer = (FrameLayout) findViewById(R.id.main_fragment_layout);
 
 
     }
