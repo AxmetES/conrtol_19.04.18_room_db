@@ -1,22 +1,18 @@
 package com.appcontroll.appcontroll_lists_db.Activitys;
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.Toast;
 
 import com.appcontroll.appcontroll_lists_db.Adapters.MainListAdapter;
 import com.appcontroll.appcontroll_lists_db.EntityItemListDB;
@@ -33,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     List<EntityItemList> entityItemLists;
     final int MENU_DELETE = 1;
     private FrameLayout fragmentContainer;
+    private MainMenuFragment colorChangeFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
         });
         registerForContextMenu(recyclerView);
 
+
+        colorChangeFragment = new MainMenuFragment();
         fragmentContainer = (FrameLayout) findViewById(R.id.main_fragment_layout);
 
 
@@ -73,22 +72,22 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.menu_settings){
-            changeFragment();
+            changeFragment(colorChangeFragment);
         }
         if(item.getItemId() == R.id.menu_about){
-            changeFragment();
+
         }
         if(item.getItemId() == R.id.menu_app_exit){
-            changeFragment();
+
         }
         return super.onOptionsItemSelected(item);
     }
 
-    public void changeFragment(){
-        android.app.Fragment fragment = new android.app.Fragment();
-        FragmentManager fm = getFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.color_change_fragment, fragment);
+    public void changeFragment(MainMenuFragment fragment){
+
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.main_fragment_layout, fragment);
         ft.commit();
+        getSupportActionBar().setTitle("Change Color");
     }
 }

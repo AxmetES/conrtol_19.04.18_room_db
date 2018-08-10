@@ -37,6 +37,6 @@
         android:id="@+id/main_fragment_layout"
         android:name="com.appcontroll.appcontroll_lists_db.Activitys.MainMenuFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="499dp" />
 
 </android.support.design.widget.CoordinatorLayout>

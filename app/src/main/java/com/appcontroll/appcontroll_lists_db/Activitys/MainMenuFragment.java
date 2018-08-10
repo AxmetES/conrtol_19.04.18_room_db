@@ -31,7 +31,7 @@ public class MainMenuFragment extends Fragment {
     }
 
     private void initView(View view){
-        Button btnClickChangeColor = (Button) view.findViewById(R.id.main_colorcahnge_btn);
+        Button btnClickChangeColor = (Button) view.findViewById(R.id.main_color_change_btn);
 
     }
 }
