@@ -39,7 +39,6 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:text="change"
-          android:layout_above="@+id/color_radio_group"
           android:layout_marginTop="30dp"/>
 
 

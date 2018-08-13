@@ -42,11 +42,11 @@ public class MainMenuFragment extends Fragment {
             public void onClick(View v) {
                 int id = colorChangeRadioGroup.getCheckedRadioButtonId();
                 switch (id) {
-                    case R.id.main_radio_red:
+                    case R.id.main_radio_blue:
                         Constant.theme = R.style.AppTheme_red;
                         break;
 
-                    case R.id.main_radio_blue:
+                    case R.id.main_radio_red:
                         Constant.theme = R.style.AppTheme_red;
                         break;
 
