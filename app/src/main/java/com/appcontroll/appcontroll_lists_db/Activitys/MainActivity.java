@@ -1,6 +1,7 @@
 package com.appcontroll.appcontroll_lists_db.Activitys;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentTransaction;
@@ -30,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
     final int MENU_DELETE = 1;
     private FrameLayout fragmentContainer;
     private MainMenuFragment colorChangeFragment;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
 
         colorChangeFragment = new MainMenuFragment();
         fragmentContainer = (FrameLayout) findViewById(R.id.main_fragment_layout);
+
+
 
 
     }
