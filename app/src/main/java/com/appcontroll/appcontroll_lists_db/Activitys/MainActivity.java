@@ -31,8 +31,7 @@ public class MainActivity extends AppCompatActivity {
     final int MENU_DELETE = 1;
     private FrameLayout fragmentContainer;
     private MainMenuFragment colorChangeFragment;
-    SharedPreferences sharedPreferences;
-    SharedPreferences.Editor editor;
+
 
 
     @Override

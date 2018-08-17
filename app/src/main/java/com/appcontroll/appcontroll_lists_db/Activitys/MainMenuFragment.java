@@ -1,6 +1,7 @@
 package com.appcontroll.appcontroll_lists_db.Activitys;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -18,6 +19,8 @@ public class MainMenuFragment extends Fragment {
      Button btnClickChangeColor;
      RadioGroup colorChangeRadioGroup;
      RadioButton radioButtonBlue, radioButtonRed, radioButtonYellow;
+     SharedPreferences sharedPreferences;
+     SharedPreferences.Editor editor;
 
 
     public MainMenuFragment() {
@@ -29,7 +32,6 @@ public class MainMenuFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_main_menu, container, false);
-
 
         btnClickChangeColor = (Button) view.findViewById(R.id.main_color_change_btn);
         colorChangeRadioGroup = (RadioGroup) view.findViewById(R.id.color_radio_group);
@@ -62,5 +64,4 @@ public class MainMenuFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState){
         super.onViewCreated(view,savedInstanceState);
     }
-
 }
