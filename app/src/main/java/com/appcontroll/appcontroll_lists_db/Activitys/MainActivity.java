@@ -32,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
     private FrameLayout fragmentContainer;
     private MainMenuFragment colorChangeFragment;
 
+    static SharedPreferences sharedPreferences;
+    static SharedPreferences.Editor editor;
+
+
 
 
     @Override
@@ -46,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.ma_list_rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
         adapter = new MainListAdapter(getApplicationContext(), EntityItemListDB.getAppDB(getApplicationContext()).getEntityDao().getAllEntity());
         recyclerView.setAdapter(adapter);
 
@@ -63,7 +66,8 @@ public class MainActivity extends AppCompatActivity {
         colorChangeFragment = new MainMenuFragment();
         fragmentContainer = (FrameLayout) findViewById(R.id.main_fragment_layout);
 
-
+        sharedPreferences = getSharedPreferences("theme_settings",MODE_PRIVATE);
+        editor = sharedPreferences.edit();
 
 
     }
@@ -93,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.main_fragment_layout, fragment);
+        ft.addToBackStack(null);
         ft.commit();
         getSupportActionBar().setTitle("Change Color");
     }

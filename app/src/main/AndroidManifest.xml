@@ -24,7 +24,7 @@
         <activity
             android:name=".Activitys.SecondActivity"
             android:label="@string/title_activity_second2"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

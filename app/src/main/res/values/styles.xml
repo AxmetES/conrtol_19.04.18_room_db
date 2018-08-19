@@ -19,9 +19,12 @@
 
 
     <style name="AppTheme_red" parent="Theme.AppCompat.Light.NoActionBar">
-    <item name="colorPrimary">@color/red_primary</item>
-    <item name="colorPrimaryDark">@color/red_primary_dark</item>
-    <item name="colorAccent">@color/red_accent</item>
+        <item name="colorPrimary">@color/red_primary</item>
+        <item name="colorPrimaryDark">@color/red_primary_dark</item>
+        <item name="colorAccent">@color/red_accent</item>
+        <item name="android:divider">@color/red_divider</item>
+        <item name="android:textColorSecondary">@color/red_secondary_text</item>
+        <item name="android:textColorPrimary">@color/red_primary_text</item>
     </style>
     <style name="AppTheme_red.NoActionBar">
         <item name="windowActionBar">false</item>

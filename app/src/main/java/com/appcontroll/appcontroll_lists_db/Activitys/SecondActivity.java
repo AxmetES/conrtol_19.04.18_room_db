@@ -57,8 +57,6 @@ public class SecondActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-//        startActivity(new Intent(SecondActivity.this, MainActivity.class));
-
         int id = item.getItemId();
         if (id == android.R.id.home){
             startActivity(new Intent(SecondActivity.this, MainActivity.class));

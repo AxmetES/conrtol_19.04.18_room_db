@@ -18,7 +18,6 @@
             android:background="#C5CAE9"
             app:popupTheme="@style/AppTheme.PopupOverlay"
             app:title="List View"
-
             />
 
     </android.support.design.widget.AppBarLayout>
