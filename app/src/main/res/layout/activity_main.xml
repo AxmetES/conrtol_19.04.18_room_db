@@ -9,35 +9,36 @@
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        >
+        <!--android:theme="@style/AppTheme.AppBarOverlay"-->
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?android:attr/actionBarSize"
             android:background="#C5CAE9"
-            app:popupTheme="@style/AppTheme.PopupOverlay"
             app:title="List View"
             />
+        <!--app:popupTheme="@style/AppTheme.PopupOverlay"-->
 
-    </android.support.design.widget.AppBarLayout>
+</android.support.design.widget.AppBarLayout>
 
 
-    <include layout="@layout/content_main"/>
+<include layout="@layout/content_main"/>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@drawable/ic_add_circle"/>
+<android.support.design.widget.FloatingActionButton
+    android:id="@+id/fab"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom|end"
+    android:layout_margin="@dimen/fab_margin"
+    app:srcCompat="@drawable/ic_add_circle"/>
 
-    <FrameLayout
-        android:id="@+id/main_fragment_layout"
-        android:name="com.appcontroll.appcontroll_lists_db.Activitys.MainMenuFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="?android:attr/actionBarSize"/>
+<FrameLayout
+    android:id="@+id/main_fragment_layout"
+    android:name="com.appcontroll.appcontroll_lists_db.Activitys.MainMenuFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="?android:attr/actionBarSize"/>
 
 </android.support.design.widget.CoordinatorLayout>
